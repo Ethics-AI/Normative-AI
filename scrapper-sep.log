@@ -1,0 +1,8 @@
+2019-02-27 21:19:50,306 - scrapper-sep - ERROR - ('get article/infos', AttributeError("'NoneType' object has no attribute 'get'"), 'https://plato.stanford.edu/entries/fiction/')
+2019-02-27 21:20:45,343 - scrapper-sep - ERROR - ('get article/infos', AttributeError("'NoneType' object has no attribute 'get'"), 'https://plato.stanford.edu/entries/consequence-algebraic/')
+2019-02-27 21:21:16,582 - scrapper-sep - ERROR - ('get article/infos', AttributeError("'NoneType' object has no attribute 'get'"), 'https://plato.stanford.edu/entries/feminism-approaches/')
+2019-02-27 21:21:43,961 - scrapper-sep - ERROR - ('get article/infos', AttributeError("'NoneType' object has no attribute 'get'"), 'https://plato.stanford.edu/entries/feminism-topics/')
+2019-02-27 21:21:56,045 - scrapper-sep - ERROR - ('get article/infos', AttributeError("'NoneType' object has no attribute 'get'"), 'https://plato.stanford.edu/entries/biology-self/')
+2019-02-27 21:22:04,903 - scrapper-sep - ERROR - ('get article/infos', AttributeError("'NoneType' object has no attribute 'get'"), 'https://plato.stanford.edu/entries/mental-illness/')
+2019-02-27 21:22:24,378 - scrapper-sep - ERROR - ('get article/infos', AttributeError("'NoneType' object has no attribute 'get'"), 'https://plato.stanford.edu/entries/paradox-stpetersburg/')
+2019-02-27 21:22:29,310 - scrapper-sep - ERROR - ('get article/infos', AttributeError("'NoneType' object has no attribute 'get'"), 'https://plato.stanford.edu/entries/causation-process/')

@@ -24,7 +24,8 @@ def articles_with_kw_in_title(kw):
     cursor = article.find({'title': {'$regex': regex}})
     return cursor
 
-
 #test = articles_with_kw_in_title('religion')
+#print(test.count())
+
 #for t in test:
 #    print(t)

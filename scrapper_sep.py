@@ -15,7 +15,10 @@ logger = logging.getLogger('scrapper-sep')
 fh = logging.FileHandler('scrapper-sep.log')
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 fh.setFormatter(formatter)
+ch = logging.StreamHandler()
 logger.addHandler(fh)
+logger.addHandler(ch)
+
 
 
 def divide_chunks(l, n):
@@ -60,12 +63,11 @@ def process_article(url):
     try:
         article = get(url)
         infos = article.select_one('a[href*=archinfo]').get('href')
-        infos = get(infos).stap()
+        infos = get(infos)
         return str(article), str(infos), url
     except Exception as err:
         print('ERR - get article/infos')
         logger.error(('get article/infos', err, url))
-        exit()
         return None
 
 def get_meta(arg):
@@ -115,13 +117,13 @@ def get_meta(arg):
     return meta._asdict()
 
 
-urls = get_total_website_urls()[:5]
+urls = get_total_website_urls()
 
 #all_pages = Parallel(n_jobs=16, prefer='threads')(delayed(get_all_pages)(KEYWORD, i) for i in tqdm(pages_range, leave=False))
 #urls = Parallel(n_jobs=1, prefer='processes')(delayed(get_page_urls)(page, KEYWORD) for page in tqdm(all_pages, leave=False))
 #urls = [url for x in urls for url in x]
 
-articles = Parallel(n_jobs=64, prefer='threads')(delayed(process_article)(url) for url in tqdm(urls, leave=False))
+articles = Parallel(n_jobs=16, prefer='threads')(delayed(process_article)(url) for url in tqdm(urls, leave=False))
 articles = [a for a in articles if a is not None]
 metas = Parallel(n_jobs=4, prefer='processes')(delayed(get_meta)(article) for article in tqdm(articles, leave=False))
 
