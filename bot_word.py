@@ -30,8 +30,7 @@ def labelize():
             continue
 
         try:
-                print('You have 5 seconds')
-                res = inputimeout('Word "{}" is: Normative-0   Positive-1'.format(word), timeout=2)
+                res = inputimeout('Word "{}" is: Normative-0   Positive-1'.format(word), timeout=10)
                 res = int(res)
                 with open("word_labels.txt", "a") as myfile:
                     myfile.write("{} {}\n".format(word, res))
