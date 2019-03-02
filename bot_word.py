@@ -9,7 +9,7 @@ with open('./total_word_counts.txt') as ff:
 with open('./word_labels.txt') as ff:
     lab = ff.readlines()
 
-data = [(x.split()[0], None) for x in data]
+data = [[x.split()[0], None] for x in data]
 lab = set([x.split()[0] for x in lab])
 
 
@@ -32,6 +32,7 @@ def labelize():
         try:
                 res = inputimeout('{} '.format(word), timeout=10)
                 res = int(res)
+                data[i][1] = res
                 with open("word_labels.txt", "a") as myfile:
                     myfile.write("{} {}\n".format(word, res))
         except:
